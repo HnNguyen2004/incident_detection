@@ -1,0 +1,16 @@
+# Detection & Tracking configuration
+model:
+  name: yolo26m
+  weights: null          # path to .pt weights file; null = auto-download
+  device: cpu            # "cpu" | "cuda" | "mps"
+  conf_threshold: 0.4
+  iou_threshold: 0.5
+  classes:               # COCO class IDs to keep (vehicles only)
+    - 2   # car
+    - 3   # motorcycle
+    - 5   # bus
+    - 7   # truck
+
+tracker:
+  enabled: false         # placeholder — configure after Stage 1 is stable
+  algorithm: botsort     # botsort | bytetrack

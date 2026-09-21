@@ -1,0 +1,12 @@
+# Flood Road Detection model
+model:
+  type: classifier              # "classifier" | "segmentation" — TBD
+  checkpoint: null
+
+classes:
+  - Normal
+  - PossibleFlood
+  - SevereFlood
+
+inference:
+  conf_threshold: 0.5

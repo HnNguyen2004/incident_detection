@@ -1,0 +1,63 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# ML / Data (large files - use DVC or download scripts)
+data/raw/
+data/processed/
+data/splits/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.weights
+runs/
+wandb/
+mlruns/
+
+# Logs & outputs
+logs/
+*.log
+outputs/
+results/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dashboard
+dashboard/node_modules/
+dashboard/.next/
+dashboard/dist/
+dashboard/build/
+
+# Configs with secrets
+configs/secrets.yaml

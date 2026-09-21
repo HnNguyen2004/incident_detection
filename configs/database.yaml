@@ -1,0 +1,8 @@
+# Database configuration
+sqlite:
+  path: data/incidents.db
+
+api:
+  host: 0.0.0.0
+  port: 8000
+  reload: false

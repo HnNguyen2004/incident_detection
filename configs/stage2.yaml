@@ -1,0 +1,15 @@
+# Stage 2 Image Classifier
+model:
+  backbone: efficientnet_b0    # placeholder; update when decided
+  num_classes: 2               # [normal, accident]
+  checkpoint: null             # path to saved .pt checkpoint
+
+training:
+  batch_size: 32
+  epochs: 30
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+  class_weights: [1.0, 10.0]  # handle class imbalance (accident is rare)
+
+inference:
+  conf_threshold: 0.6

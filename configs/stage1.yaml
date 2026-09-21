@@ -1,0 +1,15 @@
+# Stage 1 Rule-based Candidate Detection
+# All tuneable thresholds go here — never hardcode in source
+sudden_stop:
+  speed_drop_threshold: 0.15   # fraction of prev speed triggering alert
+  min_prev_speed: 5.0          # px/frame; ignore already-stopped vehicles
+  consecutive_frames: 3
+
+lane_deviation:
+  lateral_shift_threshold: 30  # pixels; lateral bbox center displacement
+  consecutive_frames: 2
+
+abnormal_trajectory:
+  peer_speed_ratio: 0.3        # vehicle speed / median peer speed
+
+candidate_cooldown_sec: 5.0    # ignore same track_id within this window

@@ -1,0 +1,19 @@
+# Cursor AI Rules - Incident Detection & Flood Alert System
+# ALWAYS READ AND STRICTLY ADHERE TO AGENTS.md AS THE SINGLE SOURCE OF TRUTH.
+
+## Team Ownership & Boundary Constraints
+Each team member has a dedicated module. Your AI agent MUST NOT modify code outside your assigned module without coordination:
+- Nguyên: src/detection_tracking/, src/incident_detection/stage1_rule_engine/, src/stage2_classifier/
+- Son: src/flood_model/
+- Lãnh: src/database/, src/pipeline/, src/incident_detection/event_engine/, evaluation/
+- Khang: dashboard/, docs/, tests/
+
+## Critical Rules for Vibecoding / Code Generation:
+1. CANONICAL EVENT SCHEMA: Always import and use PipelineEvent from src.pipeline.event_schema. NEVER invent custom dict formats for events.
+2. NO HARDCODED THRESHOLDS: All tunable parameters, speeds, thresholds, confidence levels MUST be loaded from YAML files in configs/.
+3. SEPARATION OF CONCERNS: Stage 1 (rule-based heuristic) and Stage 2 (image classifier) must remain strictly independent.
+4. EVALUATION: Both traffic and flood models must use the shared evaluation harness in evaluation/metrics.py. Do NOT write separate ad-hoc evaluation scripts.
+5. CODE CONVENTIONS:
+   - Python 3.14+, type hints everywhere, docstrings on public classes/functions.
+   - Run pytest before proposing commits.
+   - Do NOT commit data files (*.mp4, *.avi, *.jpg, *.csv) or model weights (*.pt, *.onnx).

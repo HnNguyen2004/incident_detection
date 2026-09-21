@@ -1,0 +1,33 @@
+# End-to-end pipeline configuration
+source:
+  type: file                    # "file" | "rtsp" | "webcam"
+  path: null                    # override with --source CLI arg
+  fps_limit: 30
+
+detection:
+  config: configs/detection.yaml
+
+stage1:
+  config: configs/stage1.yaml
+
+stage2:
+  config: configs/stage2.yaml
+  enabled: true
+
+flood:
+  config: configs/flood.yaml
+  enabled: false                # enable when flood model is ready
+
+event_engine:
+  smoothing_window: 5           # frames
+  dedup_iou_threshold: 0.5
+  cooldown_sec: 30.0
+  min_score_to_save: 0.6
+
+database:
+  config: configs/database.yaml
+
+output:
+  save_clips: true
+  clips_dir: outputs/clips/
+  log_level: INFO
