@@ -75,15 +75,6 @@ incident_detection/
 
 > Raw data không được commit. Xem `scripts/download_data.py`.
 
-## Phân công
-
-| Module                              | Người  |
-|-------------------------------------|--------|
-| `detection_tracking/`, `stage1_rule_engine/`, `stage2_classifier/` | Nguyên |
-| `flood_model/`                      | Son    |
-| `database/`, `pipeline/`, `event_engine/`, backend/API | Lãnh |
-| `dashboard/`, testing, docs         | Khang  |
-
 ## Chạy pipeline
 
 ```bash
